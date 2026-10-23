@@ -68,6 +68,23 @@ The diagrams use [Mermaid](https://docs.github.com/en/get-started/writing-on-git
 which GitHub renders directly in Markdown files and wikis. Their editable source lives
 in this README.
 
+## Project activities in each phase
+
+The orchestra defines six phases: **planning, implementation, verification, review,
+delivery and follow-up**. Projects can attach hooks to each phase in their own policy
+or linked documentation. Each hook names its trigger/timing, practical procedure,
+owner, evidence destination and whether completion is required.
+
+For example, a project's screenshot guide can define how to capture images during
+verification, inspect them during review and post them during follow-up. The shared
+workflow defines when those instructions apply; the project defines the routes,
+tools and upload steps. Agents execute the instructions; no hook runner is installed.
+
+See the [hook contract](ORCHESTRA.md#apply-project-hooks-at-each-phase) and
+[project template](PROJECT.example.md#project-phase-hooks). Hooks are optional to
+configure; configured required hooks must pass before the dependent phase can finish.
+Projects without hooks retain the core workflow.
+
 ## Install a pinned release
 
 Recommended for this small documentation package: **Git subtree with squash**. Files

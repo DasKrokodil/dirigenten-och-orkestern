@@ -22,6 +22,24 @@ Each maintainer request starts a single scoped task. Queue polling and idle watc
 are disabled unless explicitly requested. For an authorized queue session, also read
 [COORDINATION.md](COORDINATION.md) and establish its scope and timer settings.
 
+## Project phase hooks
+
+Apply ORCHESTRA.md's hook contract. All hooks below are required when their trigger
+applies and owned by the conductor; delegate only explicit scoped activities.
+
+| Hook | Phase and trigger/timing | Procedure and completion evidence |
+| --- | --- | --- |
+| Plan repository work | `planning`: every change, before implementation | Read the relevant policy/topic docs and create/reuse the issue with labels and a short plan under the GitHub rules below |
+| Preserve scope | `implementation`: every change, before verification | Inspect the patch for unrelated edits and preserve concurrent work |
+| Check instructions | `verification`: documentation changes, before review | Check diff, relative links and consistency; walk through changed workflow scenarios and record results in the issue completion note |
+| Review delivery | `review`: every change, before publishing | Read the combined diff and check acceptance against existing evidence; correct concrete defects |
+| Publish main | `delivery`: every completed requested change | Follow the publishing rules below; confirm the delivered commit is on remote main |
+| Complete issue | `follow-up`: every tracked change, before closure | Post the completion comment and relevant evidence under the rules below, remove active labels and close only if acceptance is met |
+
+No screenshot hook is configured for ordinary instruction changes. When a task has
+visual acceptance, add the relevant capture, inspection and sharing procedure to its
+plan as described below. No additional hooks or timers are enabled implicitly.
+
 ## Track actual work in GitHub
 
 Use the current authoritative Issueflow guide as resolved by ISSUE-WORKFLOW.md;

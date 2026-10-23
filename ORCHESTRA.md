@@ -17,11 +17,53 @@ Before implementation, write at most a few lines in the assignment or issue:
 - Checks: normally 2–3 checks tied to specific failure risks, plus mandatory gates.
 - Ownership and done: worker, checkout, integration owner and release/closure evidence.
 - Follow-up: owner, evidence format, destination and timing, chosen for the acceptance.
+- Project hooks: applicable phase activities and their required evidence.
 
 Spend minutes, not a planning phase, on an ordinary issue. Read relevant modules and
 topic docs; do not inventory the entire application by default. Resolve a material
 unknown with one focused investigation, then update the plan. A file count or elapsed
 time alone is a signal to reassess, not a reason to manufacture child issues.
+
+## Apply project hooks at each phase
+
+Projects can extend the workflow with activities documented in their host policy or
+linked topic documents. These hooks are instructions for the agent, including manual
+steps or existing commands; this package installs no hook runner. The shared phase
+names and boundaries are:
+
+| Phase | Boundary for project activities |
+| --- | --- |
+| `planning` | Read relevant context and finalize the short delivery plan before implementation |
+| `implementation` | Make the scoped change before handing it to verification |
+| `verification` | Collect evidence for the affected behavior before review |
+| `review` | Review the combined diff and evidence before authorizing delivery |
+| `delivery` | Integrate/publish under host rules and verify the delivered revision |
+| `follow-up` | Publish results and required evidence before issue closure or final handoff |
+
+For each hook, the project defines a stable name, phase, trigger and timing (entry,
+exit or a specific event within that phase), practical procedure or document link,
+owner, expected evidence/destination and whether it is required or optional. List
+multiple hooks in execution order within a phase. Use
+[PROJECT.example.md](PROJECT.example.md) as the configuration template.
+
+During planning, resolve applicable hooks and put their owners and evidence needs in
+the existing plan/worker brief. Read the linked procedure before executing a hook.
+At each phase boundary, the conductor checks the relevant hook outcomes before moving
+on. A hook with a false trigger is not applicable; record that briefly when it affects
+expected evidence. Without configured hooks, follow the core workflow normally.
+
+A failed or unavailable required hook blocks the dependent phase transition or
+closure; preserve evidence, report the next action and continue only independent work.
+Report skipped or failed optional hooks without treating them as required acceptance.
+Record outcomes in existing check/result notes, bound to the revision and environment.
+Reuse valid evidence; repeat a hook only when its trigger recurs and evidence is no
+longer valid, its procedure explicitly requires repetition, or a relevant failure needs
+rechecking. Reassess a failed approach rather than retrying it blindly.
+
+Hooks add project activities without weakening core checks, acceptance or permission
+boundaries. They do not grant deployment/messaging permissions or enable unattended
+monitoring. Queue intake hooks remain governed by [COORDINATION.md](COORDINATION.md);
+reuse their outcomes when valid rather than running the same activity twice.
 
 ## Spend resources deliberately
 
