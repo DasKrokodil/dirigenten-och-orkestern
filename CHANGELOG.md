@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.2 — 2026-10-23
 
 - Let a bounded pass release only under the host's release rule; the template shows
   releasing once no open issues remain rather than per issue.
