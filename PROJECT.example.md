@@ -12,7 +12,11 @@ not executable code. Keep project details here, never in the shared instructions
   for other trackers. Local ancestor/port constraints: <policy>.
 - Excluded coordination labels; active/session labels: <names>.
 - Claims, race handling, expiry and handover: <rules>.
-- Capacity: <worker cap, includes helpers>; direct conductor implementation: <allowed?>.
+- Capacity: <concurrent issue workers, includes helpers>; whether the conductor's own
+  implementation counts as a slot; direct conductor implementation: <allowed?>.
+  Expensive shared verification: <browser/e2e/device runs and how they are queued>.
+- Per-worktree isolation: <port range or allocation, server/config overrides, no
+  `reuseExistingServer` across checkouts, check that the server serves this revision>.
 - Runtime/model selection: <available economical/stronger capabilities, concrete model
   identifiers/effort controls in the adapter, or selection unavailable/locked>. Follow
   the core resource policy; document limits rather than assuming inherited effort is

@@ -8,6 +8,10 @@
 - Refresh the bundled Issueflow snapshot to `fec18cc` with its parent/sub-issue rules;
   the worker starting the first sub-issue labels the parent, the conductor removes the
   label and closes the parent, and a parent's label takes no capacity slot.
+- Run independent issues concurrently up to host capacity in queue sessions and bounded
+  passes; keep the smallest-team rules within one issue, make the conductor's own
+  implementation a deliberate slot, queue expensive shared verification and isolate
+  ports/servers per worktree. Report active workers/capacity and unused slots.
 
 ## 0.1.2 — 2026-10-23
 

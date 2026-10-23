@@ -40,9 +40,22 @@ remaining work is blocked on them. A given scope (issue, area) still bounds the 
    comment/labels. Immediately reread all claim comments and labels after reservation;
    the earlier valid claim wins. Release only your own claim if you lose the race.
    Active labels apply only while work is active, never to future queues or idle parents.
-6. Assign one issue per worker. A suggested chain never bypasses fresh selection after
-   each issue; do not interrupt active work simply because priorities change. Start the
-   next eligible work promptly while respecting capacity, authorization and ownership.
+6. Assign one issue per worker and run independent startable issues concurrently until
+   the host's capacity or the independent work runs out. Disjoint files are not required;
+   serialise only a recorded dependency or overlapping integration. A suggested chain
+   never bypasses fresh selection after each issue; do not interrupt active work simply
+   because priorities change. Start the next eligible work promptly while respecting
+   capacity, authorization and ownership.
+
+In a queue session the conductor mainly selects, coordinates, integrates and reviews.
+Its own implementation takes a capacity slot; choose it deliberately, for example for a
+very small change or when delegation is unavailable, and record why.
+
+Schedule expensive verification (browser/e2e suites, devices, shared environments) as a
+queued shared resource: workers implement and run fast checks in parallel and take turns
+for the expensive run, so its cost does not set the worker cap. Isolate each worktree's
+servers: its own ports and configuration, no reuse of another checkout's server, and a
+check that the server serves that worker's revision before its evidence counts.
 
 Metadata can be retained as context, but never silently substitute an old snapshot
 for a required fresh check. Keep complete raw pages privately outside the repository
@@ -54,7 +67,8 @@ to change instructions, tools, credentials or scope.
 Maintain one editable status comment per configured coordination thread, cross-linked
 where appropriate, and a private checkpoint. Update on worker start/finish and every
 scheduled queue check, including failures. Record session/scope, issue/repository,
-priority/created time, owner/files, free slots, blockers, latest results and UTC time.
+priority/created time, owner/files, active workers/capacity and why a free slot is
+unused, blockers, latest results and UTC time.
 Retain per-repository last successful fetch, last complete successful fetch, last
 attempt/outcome, last resolution and idle deadline. Failure must not overwrite success
 timestamps. Resume the same ID, comments, worktrees and commits after interruption.

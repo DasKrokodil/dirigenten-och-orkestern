@@ -104,7 +104,9 @@ Keep the decision to a line in the existing plan/brief: capability/effort, why i
 and a task-specific stop/reassessment condition. This is not a new reporting phase.
 Choose direct work when a handoff would cost more than it saves. A helper must save
 expected total work or materially shorten the critical path; idle capacity alone is
-not a reason to spawn one or duplicate an investigation.
+not a reason to add one to the same issue or duplicate an investigation. In a queue
+session or bounded pass, the next independent issue is a separate delivery, not a
+helper; [coordination](COORDINATION.md#select-and-claim) fills capacity with those.
 
 Give workers a compact brief, acceptance, relevant paths and the current findings.
 Keep mandatory host rules accessible, but do not copy the entire conversation, queue
@@ -124,6 +126,9 @@ blindly. Record the reason and changed capability/scope in the existing brief/st
 Return routine follow-on work to the economical setting when the uncertainty is resolved.
 
 ## Choose the smallest useful team
+
+These team rules apply within one issue. Across independent issues in a queue session
+or bounded pass, run separate deliveries concurrently up to the host's capacity.
 
 For a small cohesive change use one implementer and one conductor review. The conductor
 may implement directly when project policy allows; if delegation is unavailable,
