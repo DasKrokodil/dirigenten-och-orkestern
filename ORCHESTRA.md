@@ -8,6 +8,14 @@ shared method; repository names, issue systems, permissions, release rules and t
 belong in the host policy. User instructions and platform restrictions take precedence.
 Reading or maintaining these files does not start an unattended queue session.
 
+## Check the installed workflow
+
+At conductor startup/resume, follow the host's upstream/version settings and
+[update-discovery procedure](README.md#check-for-upstream-updates). Reuse a successful
+check for up to 24 hours by default. Always propose relevant published bug fixes;
+other upgrades are optional. Keep the installed workflow pinned until a reviewed
+update is authorized; discovery does not enable unattended work or automatic imports.
+
 ## Start with a short delivery plan
 
 Before implementation, write at most a few lines in the assignment or issue:

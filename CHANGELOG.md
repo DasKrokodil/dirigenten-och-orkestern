@@ -5,6 +5,11 @@
 - Add project hooks across planning, implementation, verification, review, delivery
   and follow-up, with triggers, procedures, ownership, evidence and required/optional
   outcomes; include a project template and an illustrative screenshot lifecycle.
+- Check official stable releases/tags at conductor startup/resume with a bounded cache;
+  always propose relevant bug fixes, keep other upgrades optional and imports reviewed.
+- Document exact-revision comparisons, tag-only releases, mixed upgrades, deduplication
+  and offline fallback without installing background automation.
+
 - Define task-specific follow-up with an owner, evidence format, destination and
   timing; include visual, behavioral, documentation and deployment examples.
 - Require issue completion evidence before closure and keep unavailable required

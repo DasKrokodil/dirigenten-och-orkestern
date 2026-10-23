@@ -25,6 +25,10 @@ not executable code. Keep project details here, never in the shared instructions
 - Publishing: <branch/PR/direct policy and authorization>; no force push by default.
 - Cross-project boundaries and attribution/licenses: <rules>.
 - Installed shared version: <release and exact commit>; update using shared README.
+- Upstream discovery: <official repository/release source>; check at conductor
+  startup/resume, reuse successful results for 24 hours by default. Relevant bug fixes
+  always get a proposal; other upgrades <optional/opt-in preference>. Proposal channel
+  and import authorization: <existing issue/change workflow and permissions>.
 
 The shared workflow supplies planning, delegation, scoped verification and stop rules.
 Do not duplicate it here. Project constraints override shared defaults, not explicit
