@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Shorten and wrap README diagram labels, use SVG text for label layout, and show
+  project-defined technical procedures as hooks in every delivery phase.
 - Add project hooks across planning, implementation, verification, review, delivery
   and follow-up, with triggers, procedures, ownership, evidence and required/optional
   outcomes; include a project template and an illustrative screenshot lifecycle.

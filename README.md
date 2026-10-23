@@ -21,15 +21,16 @@ project's rules and the shared workflow, chooses the smallest useful team, and o
 integration and review. The host provides the actual tools and permissions.
 
 ```mermaid
+%%{init: {"htmlLabels": false}}%%
 flowchart TD
-    task["User request or selected issue"] --> conductor["Conductor: plan and coordinate"]
-    host["Host project policy: scope, tools and release rules"] --> conductor
-    core["ORCHESTRA.md: shared workflow"] --> conductor
-    conductor --> implementer["Implementation: conductor or assigned worker"]
-    conductor -. "When independent work helps" .-> helper["Optional helper: investigate or prepare checks"]
-    implementer --> review["Conductor: integrate and review evidence"]
-    helper -. "Findings and evidence" .-> review
-    review --> result["Verified result and delivery report"]
+    task["Request or issue"] --> conductor["Conductor<br/>Plan and coordinate"]
+    host["Project documentation<br/>Policy and phase hooks"] --> conductor
+    core["ORCHESTRA.md<br/>Shared workflow"] --> conductor
+    conductor --> implementer["Implementation<br/>Conductor or worker"]
+    conductor -. "If useful" .-> helper["Optional helper<br/>Independent work"]
+    implementer --> review["Conductor<br/>Integrate and review"]
+    helper -. "Evidence" .-> review
+    review --> result["Verified delivery<br/>Results and evidence"]
 ```
 
 A small change can stay with one agent performing the roles in sequence. With workers,
@@ -39,17 +40,18 @@ the changes. Parallel work is useful only where the tasks are independent.
 ## From task to delivery
 
 ```mermaid
+%%{init: {"htmlLabels": false}}%%
 flowchart TD
-    scope["Read relevant context and define the outcome"] --> plan["Short plan: boundaries, ownership and checks"]
-    plan --> work["Implement; overlap independent work when useful"]
-    work --> verify["Run checks for the affected behavior"]
-    verify --> passed{"Required checks and acceptance met?"}
-    passed -- "No" --> correct["Diagnose and correct within scope"]
+    project["Project documentation<br/>Technical procedures"] -. "Hooks in every phase" .-> plan
+    plan["Planning + hooks<br/>Scope and checks"] --> work["Implementation + hooks<br/>Scoped changes"]
+    work --> verify["Verification + hooks<br/>Run checks"]
+    verify --> passed{"Checks passed?"}
+    passed -- "No" --> correct["Diagnose and correct"]
     correct --> verify
-    passed -- "Yes" --> review["Conductor reviews the diff and existing evidence"]
-    review -- "Concrete defect" --> correct
-    review -- "Ready" --> deliver["Deliver under host rules"]
-    deliver --> followup["Follow up: post results and relevant evidence before closure"]
+    passed -- "Yes" --> review["Review + hooks<br/>Diff and evidence"]
+    review -- "Defect" --> correct
+    review -- "Ready" --> deliver["Delivery + hooks<br/>Publish and verify"]
+    deliver --> followup["Follow-up + hooks<br/>Share results"]
 ```
 
 Unavailable evidence leaves the relevant acceptance open. Once the required checks
@@ -84,6 +86,7 @@ See the [hook contract](ORCHESTRA.md#apply-project-hooks-at-each-phase) and
 [project template](PROJECT.example.md#project-phase-hooks). Hooks are optional to
 configure; configured required hooks must pass before the dependent phase can finish.
 Projects without hooks retain the core workflow.
+A failed required hook blocks its dependent step; evidence is shared before closure.
 
 ## Install a pinned release
 
