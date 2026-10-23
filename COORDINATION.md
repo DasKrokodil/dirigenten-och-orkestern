@@ -14,12 +14,12 @@ a final complete fetch and stop. A pass enables no polling, idle watch or timer 
 leaves no claims or active labels behind; those need an explicit queue session.
 
 A pass is unattended: never ask the user in the chat, at the start, during or at the
-end. Decide what the host policy authorizes, including releases when an issue's
-acceptance requires one. Post a question only the user can answer on the affected
-issue through the host's question channel (on GitHub, the `user question` label): the decision, concrete options and a recommendation. Release its claim and
-active labels, keep that acceptance open and continue with other eligible work. Skip
-the issue until the user answers there; whoever resumes it removes the label. A given
-scope (issue, area) still bounds the task.
+end. Decide what the host policy authorizes, including releases under its release rule.
+Post a question only the user can answer on the affected issue through the host's
+question channel (on GitHub, the `user question` label): the decision, concrete options
+and a recommendation. Release its claim and active labels, keep that acceptance open and
+continue with other eligible work. Skip the issue until the user answers there; whoever
+resumes it removes the label. A given scope (issue, area) still bounds the task.
 
 ## Select and claim
 

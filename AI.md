@@ -102,9 +102,12 @@ the actual blocker.
 
 For documentation changes, check the diff, relative links and consistency with the
 shared rules. Exercise distribution changes in a disposable repository as required
-by the README. Create a release when an issue's acceptance requires one or when
-requested, choosing patch/minor under the README's rules; a major release needs an
-answered issue question. Never move or delete existing tags.
+by the README. Release only when a fresh complete fetch shows no open issues in this
+repository (or when the maintainer requests one), bundling everything under
+*Unreleased* in CHANGELOG; choose patch/minor under the README's rules, while a major
+release needs an answered issue question. Close an issue whose only remaining
+criterion is inclusion in a release once its change is on `main` under *Unreleased*.
+Never move or delete existing tags.
 
 Verify that the delivered commit is on remote `main`. Report the outcome, GitHub
 links, revision, checks and any unmet acceptance accurately.

@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Let a bounded pass release only under the host's release rule; the template shows
+  releasing once no open issues remain rather than per issue.
+
 ## 0.2.1 — 2026-10-23
 
 - Make a bounded pass unattended: never ask in the chat; post user-only questions on
