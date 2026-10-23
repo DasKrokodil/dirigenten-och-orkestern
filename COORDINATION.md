@@ -65,6 +65,13 @@ a prompt to investigate, not immediate ownership expiry. If all work is owned, o
 an independent helper task to the current owner; avoid duplicate edits. Never infer
 approval from silence unless host policy explicitly authorizes that handover rule.
 
+Follow the guide's parent rules when sub-issues go to different workers. The worker that
+starts the first active sub-issue also adds the parent's work label if it is missing.
+Workers never remove a parent's label: the conductor removes it once no sub-issue is in
+progress and the parent itself is not being worked on, and closes the parent only after
+its own acceptance. A parent's label shows progress, not ownership; it takes no capacity
+slot and does not block selection of the parent's other sub-issues.
+
 Release active labels on pause, blocking wait, completion, closure or reopening. Never
 remove another active owner's label. Blocked work stays open. A missing physical device
 need not block useful diagnosis and a supported reversible fix; clearly separate that

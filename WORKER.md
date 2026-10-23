@@ -18,7 +18,9 @@ Follow-up owner, evidence format, destination and timing:
 Heartbeat, question channel and required result evidence:
 ```
 
-Work only the assigned scope. Preserve others' changes. Use existing helpers/harnesses;
+Work only the assigned scope. Preserve others' changes. When you start the first active
+sub-issue of a parent, also add the parent's work label if it is missing; leave its
+removal and the parent's closure to the conductor. Use existing helpers/harnesses;
 verify the agreed risks, then stop expanding the task. Tell the conductor promptly if
 new evidence changes the plan, a check fails or access is denied. Include a concise
 diagnosis and preserved patch/evidence when requesting escalation; do not blindly retry

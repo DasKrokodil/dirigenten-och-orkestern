@@ -5,6 +5,9 @@
 - Treat a request without a scope as one bounded pass: select and deliver eligible
   issues without asking which to take, batch user-only decisions at the end and stop
   without polling, idle watching or timers.
+- Refresh the bundled Issueflow snapshot to `fec18cc` with its parent/sub-issue rules;
+  the worker starting the first sub-issue labels the parent, the conductor removes the
+  label and closes the parent, and a parent's label takes no capacity slot.
 
 ## 0.1.2 — 2026-10-23
 
