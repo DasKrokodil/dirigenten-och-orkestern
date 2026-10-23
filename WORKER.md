@@ -19,8 +19,10 @@ Follow-up owner, evidence format, destination and timing:
 Heartbeat, question channel and required result evidence:
 ```
 
-Use only your own ports and servers, and confirm they serve your checkout before
-collecting evidence. Work only the assigned scope. Preserve others' changes. When you start the first active
+Work only in your assigned checkout: never edit files or run state-changing git
+commands in another agent's checkout or the integration owner's checkout. Use only your own
+ports, servers and temporary/build directories, and confirm servers serve your
+checkout before collecting evidence. Work only the assigned scope. Preserve others' changes. When you start the first active
 sub-issue of a parent, also add the parent's work label if it is missing; leave its
 removal and the parent's closure to the conductor. Use existing helpers/harnesses;
 verify the agreed risks, then stop expanding the task. Tell the conductor promptly if

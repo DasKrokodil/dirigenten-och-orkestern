@@ -14,7 +14,8 @@ once, and deliver with evidence.
 - **Verified delivery.** Every change goes plan → implement → verify → review →
   deliver → follow up. A failed check loops back; nothing ships on "should work".
 - **Right-sized teams.** A small fix stays with one agent. Independent issues run in
-  parallel up to your capacity, each worker with a clear scope and file ownership.
+  parallel up to your capacity, each worker in its own checkout with a clear scope, so
+agents sharing a machine never trample each other's files.
 - **Hands-off issue queue.** Run `/orkester` with no scope and the conductor picks
   eligible GitHub issues, delivers them and stops. Questions only you can answer land
   on the issue with options and a recommendation — never as a chat prompt you have to

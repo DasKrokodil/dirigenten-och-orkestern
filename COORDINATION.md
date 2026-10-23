@@ -56,7 +56,9 @@ very small change or when delegation is unavailable, and record why.
 
 Schedule expensive verification (browser/e2e suites, devices, shared environments) as a
 queued shared resource: workers implement and run fast checks in parallel and take turns
-for the expensive run, so its cost does not set the worker cap. Isolate each worktree's
+for the expensive run, so its cost does not set the worker cap. Each concurrent issue
+runs in its own worktree under the
+[isolation rules](ORCHESTRA.md#choose-the-smallest-useful-team). Isolate each worktree's
 servers: its own ports and configuration, no reuse of another checkout's server, and a
 check that the server serves that worker's revision before its evidence counts.
 

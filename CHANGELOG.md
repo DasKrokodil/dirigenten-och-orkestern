@@ -6,6 +6,10 @@
   quick start and a file map. Move installation, updates, upstream discovery and the
   distribution rationale verbatim to INSTALL.md, and cross-project improvement,
   versioning and maintainer checks to CONTRIBUTING.md; update links into them.
+- Require concurrent agents sharing a filesystem to work in separate checkouts: no
+  edits or state-changing git commands in another agent's or the integration checkout,
+  separate ports, temporary/evidence/build paths, concurrency-safe shared resources,
+  and worktree removal only after integration or preservation.
 
 ## 0.2.2 — 2026-10-23
 

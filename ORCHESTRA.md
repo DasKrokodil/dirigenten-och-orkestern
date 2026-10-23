@@ -143,8 +143,20 @@ fetches too, without adding agents just to run shell commands.
 One integration owner combines changes and publishes each issue. A helper can work
 under that issue without creating a child just for tests, docs or review. It must use
 the implementation owner's exact revision before claiming final verification. Keep
-closely coupled edits together. Serialise overlapping writes and integration; separate
-checkouts, ports and evidence directories avoid interference.
+closely coupled edits together. Serialise overlapping writes and integration.
+
+Agents running at the same time share one filesystem, so isolate them:
+
+- Each writing agent, including the conductor when it implements, works in its own
+  checkout, such as a `git worktree` on its own branch. Never edit files or run
+  state-changing git commands (checkout, switch, stash, reset, clean, rebase, commit)
+  in a checkout you do not own; the integration checkout belongs to the integration
+  owner. Reading another checkout is fine.
+- Give each checkout its own ports, server configuration, temporary/evidence
+  directories and build output. Share a cache, database or device only when it is
+  safe for concurrent use or taken in turns.
+- Only the integration owner brings changes into the integration checkout. Remove a
+  worktree only after its work is integrated or preserved.
 
 Create child issues only for independently useful deliveries that genuinely reduce
 coordination or unblock work. Keep parent acceptance visible; children inherit project
