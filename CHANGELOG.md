@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Rewrite README as a short, concrete introduction with benefits, one diagram, a
+  quick start and a file map. Move installation, updates, upstream discovery and the
+  distribution rationale verbatim to INSTALL.md, and cross-project improvement,
+  versioning and maintainer checks to CONTRIBUTING.md; update links into them.
+
 ## 0.2.2 — 2026-10-23
 
 - Let a bounded pass release only under the host's release rule; the template shows

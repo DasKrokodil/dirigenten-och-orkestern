@@ -102,9 +102,10 @@ the actual blocker.
 
 For documentation changes, check the diff, relative links and consistency with the
 shared rules. Exercise distribution changes in a disposable repository as required
-by the README. Release only when a fresh complete fetch shows no open issues in this
+by [CONTRIBUTING.md](CONTRIBUTING.md#maintainer-checks). Release only when a fresh complete fetch shows no open issues in this
 repository (or when the maintainer requests one), bundling everything under
-*Unreleased* in CHANGELOG; choose patch/minor under the README's rules, while a major
+*Unreleased* in CHANGELOG; choose patch/minor under the
+[versioning rules](CONTRIBUTING.md#improve-it-across-projects), while a major
 release needs an answered issue question. Close an issue whose only remaining
 criterion is inclusion in a release once its change is on `main` under *Unreleased*.
 Never move or delete existing tags.

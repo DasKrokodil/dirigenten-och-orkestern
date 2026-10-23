@@ -31,7 +31,7 @@ not executable code. Keep project details here, never in the shared instructions
 - Phase hooks: <definitions below or a link to project documentation; none if unused>.
 - Publishing: <branch/PR/direct policy and authorization>; no force push by default.
 - Cross-project boundaries and attribution/licenses: <rules>.
-- Installed shared version: <release and exact commit>; update using shared README.
+- Installed shared version: <release and exact commit>; update using shared INSTALL.md.
 - Upstream discovery: <official repository/release source>; check at conductor
   startup/resume, reuse successful results for 24 hours by default. Relevant bug fixes
   always get a proposal; other upgrades <optional/opt-in preference>. Proposal channel

@@ -14,7 +14,7 @@ asks no chat questions and posts user-only questions on the affected issue.
 ## Check the installed workflow
 
 At conductor startup/resume, follow the host's upstream/version settings and
-[update-discovery procedure](README.md#check-for-upstream-updates). Reuse a successful
+[update-discovery procedure](INSTALL.md#check-for-upstream-updates). Reuse a successful
 check for up to 24 hours by default. Always propose relevant published bug fixes;
 other upgrades are optional. Keep the installed workflow pinned until a reviewed
 update is authorized; discovery does not enable unattended work or automatic imports.
