@@ -14,6 +14,56 @@ new integration from [PROJECT.example.md](PROJECT.example.md). A host may expose
 and model names belong to the host/tool adapter; unavailable delegation falls back
 to sequential roles without pretending to have workers.
 
+## How it fits together
+
+The **conductor** is the agent responsible for the whole delivery. It reads the host
+project's rules and the shared workflow, chooses the smallest useful team, and owns
+integration and review. The host provides the actual tools and permissions.
+
+```mermaid
+flowchart TD
+    task["User request or selected issue"] --> conductor["Conductor: plan and coordinate"]
+    host["Host project policy: scope, tools and release rules"] --> conductor
+    core["ORCHESTRA.md: shared workflow"] --> conductor
+    conductor --> implementer["Implementation: conductor or assigned worker"]
+    conductor -. "When independent work helps" .-> helper["Optional helper: investigate or prepare checks"]
+    implementer --> review["Conductor: integrate and review evidence"]
+    helper -. "Findings and evidence" .-> review
+    review --> result["Verified result and delivery report"]
+```
+
+A small change can stay with one agent performing the roles in sequence. With workers,
+each assignment has a clear scope and file ownership; one integration owner combines
+the changes. Parallel work is useful only where the tasks are independent.
+
+## From task to delivery
+
+```mermaid
+flowchart TD
+    scope["Read relevant context and define the outcome"] --> plan["Short plan: boundaries, ownership and checks"]
+    plan --> work["Implement; overlap independent work when useful"]
+    work --> verify["Run checks for the affected behavior"]
+    verify --> passed{"Required checks and acceptance met?"}
+    passed -- "No" --> correct["Diagnose and correct within scope"]
+    correct --> verify
+    passed -- "Yes" --> review["Conductor reviews the diff and existing evidence"]
+    review -- "Concrete defect" --> correct
+    review -- "Ready" --> deliver["Deliver under host rules; report evidence and limitations"]
+```
+
+Unavailable evidence leaves the relevant acceptance open. Once the required checks
+pass, review uses those results; extra test sweeps or review agents are not routine.
+Publishing and deployment follow the host project's rules and authorization.
+
+For an explicitly requested queue session, [COORDINATION.md](COORDINATION.md) adds
+selection, ownership claims and polling around this delivery flow. Reading the package
+does not start a queue session. [WORKER.md](WORKER.md) supplies the assignment brief;
+[PROJECT.example.md](PROJECT.example.md) supplies the host policy template.
+
+The diagrams use [Mermaid](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams),
+which GitHub renders directly in Markdown files and wikis. Their editable source lives
+in this README.
+
 ## Install a pinned release
 
 Recommended for this small documentation package: **Git subtree with squash**. Files
