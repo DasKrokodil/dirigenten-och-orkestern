@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.0 — 2026-10-23
 
 - Treat a request without a scope as one bounded pass: select and deliver eligible
   issues without asking which to take, batch user-only decisions at the end and stop
