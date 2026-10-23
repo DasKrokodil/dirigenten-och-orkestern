@@ -22,6 +22,19 @@ Each maintainer request starts a single scoped task. Queue polling and idle watc
 are disabled unless explicitly requested. For an authorized queue session, also read
 [COORDINATION.md](COORDINATION.md) and establish its scope and timer settings.
 
+## Consume the orchestra from this checkout
+
+This repository is its own consumer. The root files of the current checkout are the
+installed core; there is no `.orchestra/shared` subtree, release pin or separate
+project policy, and this file takes the role of `.orchestra/project.md`. Upstream
+update discovery does not apply: the conductor already runs the newest revision.
+`/orkester` is the thin adapter in
+[.claude/commands/orkester.md](.claude/commands/orkester.md). A change to the core
+governs the session that makes it from the point it is read again, and any later
+session; record which revision a delivery followed when that matters. Consumers
+importing this repository by subtree receive the adapter under
+`.orchestra/shared/.claude/`, where hosts do not load it.
+
 ## Project phase hooks
 
 Apply ORCHESTRA.md's hook contract. All hooks below are required when their trigger
