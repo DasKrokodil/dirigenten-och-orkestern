@@ -38,6 +38,16 @@ record its revision in the issue or delivery note once per session.
   the issue before closing it. Close only after acceptance and verification pass
   and the requested change has reached `origin/main`.
 
+## Adapt follow-up to the change
+
+Apply ORCHESTRA.md's follow-up rules. Name its owner, evidence format, destination
+and timing in the short plan. Always post a completion comment on this repository's
+issue before closure, linking the delivered commit and relevant evidence. For a
+rendering change, capture and inspect the affected rendered state when visual
+acceptance requires it; for instructions, link the published text and record the
+consistency checks. Post images or artifact links when useful and supported by the
+authorized tools. Disclose missing evidence and keep unmet acceptance open.
+
 ## Commit and push requested changes
 
 The maintainer has authorized agents to commit and push completed requested changes

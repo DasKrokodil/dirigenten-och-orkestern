@@ -16,6 +16,7 @@ Before implementation, write at most a few lines in the assignment or issue:
 - Critical path: what must happen in order; which independent work can overlap.
 - Checks: normally 2–3 checks tied to specific failure risks, plus mandatory gates.
 - Ownership and done: worker, checkout, integration owner and release/closure evidence.
+- Follow-up: owner, evidence format, destination and timing, chosen for the acceptance.
 
 Spend minutes, not a planning phase, on an ordinary issue. Read relevant modules and
 topic docs; do not inventory the entire application by default. Resolve a material
@@ -139,6 +140,31 @@ Unrelated defects become separately scoped issues, not opportunistic fixes.
 Record a short result: outcome, revision, checks and limitations, deployment when
 applicable, remaining work. Attribution must name the actual tool if required; never
 pretend another provider generated the work.
+
+## Follow up with evidence that fits the change
+
+The conductor owns follow-up unless a named owner is assigned in the short plan.
+Choose the smallest useful evidence and an accessible destination under host rules:
+
+| Delivered change | Useful follow-up |
+| --- | --- |
+| Visible UI or rendered content | Screenshot of the affected state, with revision and environment; before/after when comparison helps |
+| Behavior or bug fix | Relevant test result or reproduction outcome tied to the delivered revision |
+| Documentation or policy | Link to the published change and a short explanation of what was checked |
+| Deployment | Target environment, deployed revision and outcome of the relevant post-deployment check |
+
+For issue work, post a completion comment before closure: outcome, delivered revision,
+checks, links or attachments to relevant evidence, limitations and remaining acceptance.
+A screenshot supports visual acceptance; it does not replace functional checks. Inspect
+captured images before posting and use an authorized destination without exposing
+private data. If attachments cannot be posted, provide an accessible artifact link or
+report the limitation; never claim an upload that did not happen.
+
+Perform required post-publication checks before declaring their acceptance complete.
+If required evidence or user validation is unavailable, keep the relevant acceptance
+open and name the next action and owner. Only schedule later monitoring when authorized;
+follow-up does not itself enable unattended polling. Reuse the existing result note
+and evidence rather than adding a separate reporting phase.
 
 ## Keep progress observable
 

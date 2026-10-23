@@ -13,6 +13,7 @@ Capability/effort choice (or selection limit), reason and stop/reassessment cond
 Short plan and independent helper output (if any):
 2–3 risk-based checks and mandatory release gates:
 Integration/publishing owner:
+Follow-up owner, evidence format, destination and timing:
 Heartbeat, question channel and required result evidence:
 ```
 

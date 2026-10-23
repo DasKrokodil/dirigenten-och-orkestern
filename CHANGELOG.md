@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Define task-specific follow-up with an owner, evidence format, destination and
+  timing; include visual, behavioral, documentation and deployment examples.
+- Require issue completion evidence before closure and keep unavailable required
+  acceptance open without implicitly starting monitoring.
+
 ## 0.1.1 — 2026-10-23
 
 - Make resource conservation a default across models and runtimes: choose sufficient

@@ -48,12 +48,16 @@ flowchart TD
     correct --> verify
     passed -- "Yes" --> review["Conductor reviews the diff and existing evidence"]
     review -- "Concrete defect" --> correct
-    review -- "Ready" --> deliver["Deliver under host rules; report evidence and limitations"]
+    review -- "Ready" --> deliver["Deliver under host rules"]
+    deliver --> followup["Follow up: post results and relevant evidence before closure"]
 ```
 
 Unavailable evidence leaves the relevant acceptance open. Once the required checks
 pass, review uses those results; extra test sweeps or review agents are not routine.
 Publishing and deployment follow the host project's rules and authorization.
+Follow-up fits the change: a screenshot for visual acceptance, a test result for
+behavior, or a published link and checks for documentation. The plan names the owner,
+destination and timing; issue work gets a completion comment before closure.
 
 For an explicitly requested queue session, [COORDINATION.md](COORDINATION.md) adds
 selection, ownership claims and polling around this delivery flow. Reading the package
