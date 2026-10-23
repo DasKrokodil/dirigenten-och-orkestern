@@ -1,8 +1,22 @@
 # Queue coordination
 
-Read this only for queue sessions or ownership coordination. The host policy supplies
-repositories, priority labels, status threads, hooks, timer values and release rules.
+Read this for a bounded pass, a queue session or ownership coordination. The host
+policy supplies repositories, priority labels, status threads, hooks, timer values and
+release rules.
 No scheduler, service or network integration is installed by these instructions.
+
+## Run a bounded pass
+
+A request without a scope authorizes one bounded pass over the host's configured
+queue. Select, claim and deliver eligible issues under the rules below without asking
+the user to choose; work within capacity until no eligible work remains, then perform
+a final complete fetch and stop. A pass enables no polling, idle watch or timer and
+leaves no claims or active labels behind; those need an explicit queue session.
+
+Do not halt selection for decisions only the user can make, such as releases, tags or
+unresolved product questions. Keep that acceptance open, continue with other eligible
+work and ask the batched questions at the end of the pass, or earlier only when all
+remaining work is blocked on them. A given scope (issue, area) still bounds the task.
 
 ## Select and claim
 
@@ -59,7 +73,8 @@ channel; an actual user answer removes the blocker, not merely a new comment.
 
 ## Poll, idle and stop
 
-Poll all configured queues on the host schedule during both active work and idle waiting.
+In a queue session, poll all configured queues on the host schedule during both active
+work and idle waiting.
 Run intake hooks on their own deadlines without interrupting active workers. Save each
 outcome and retry failed reads on the schedule. Keep active work progressing between
 checks; do not replay the entire startup procedure on each timer tick.

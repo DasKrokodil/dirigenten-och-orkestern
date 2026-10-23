@@ -7,7 +7,9 @@ Begärt område: $ARGUMENTS
 
 Läs och följ [AI.md](../../AI.md), repots värdpolicy. Läs därefter kärnan direkt från
 roten: [ORCHESTRA.md](../../ORCHESTRA.md), [ISSUE-WORKFLOW.md](../../ISSUE-WORKFLOW.md)
-och, för ett uttryckligen godkänt köpass, [COORDINATION.md](../../COORDINATION.md).
+och [COORDINATION.md](../../COORDINATION.md) för ett pass utan område eller ett
+uttryckligen godkänt köpass. Utan begärt område väljer dirigenten själv valbara issues
+i ett avgränsat pass utan timer och frågar inte vilket issue som ska tas.
 Använd [WORKER.md](../../WORKER.md) vid delegering.
 
 Repot konsumerar sig självt: arbetskopians rotfiler är den installerade kärnan och det

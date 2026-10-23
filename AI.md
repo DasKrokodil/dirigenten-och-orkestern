@@ -18,9 +18,12 @@ of two agents including the conductor. Use [WORKER.md](WORKER.md) for assignment
 Respect platform limits on delegation and model selection; disclose unavailable
 controls once rather than pretending they were used.
 
-Each maintainer request starts a single scoped task. Queue polling and idle watching
-are disabled unless explicitly requested. For an authorized queue session, also read
-[COORDINATION.md](COORDINATION.md) and establish its scope and timer settings.
+Each maintainer request starts a single scoped task. A request without a scope starts
+one bounded pass over this repository's open issues under
+[COORDINATION.md](COORDINATION.md#run-a-bounded-pass); do not ask which issue to take.
+Queue polling and idle watching are disabled unless explicitly requested. For an
+authorized queue session, also read COORDINATION.md and establish its scope and timer
+settings.
 
 ## Consume the orchestra from this checkout
 

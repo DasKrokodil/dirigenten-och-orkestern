@@ -7,6 +7,9 @@ before creating issues or changing labels/state. This file defines the
 shared method; repository names, issue systems, permissions, release rules and timers
 belong in the host policy. User instructions and platform restrictions take precedence.
 Reading or maintaining these files does not start an unattended queue session.
+A request without a scope, such as a bare `/orkester`, asks the conductor to choose
+the work: run one [bounded pass](COORDINATION.md#run-a-bounded-pass) without asking
+the user which issue to take.
 
 ## Check the installed workflow
 
@@ -229,5 +232,6 @@ reasons. Do not infer implementation duration from issue creation/closure timest
 Compare similar tasks and reopen/regression rates before claiming a speed improvement;
 collect this information in normal delivery, not a new benchmark project.
 
-For an unattended queue session, also read [coordination](COORDINATION.md) and the
-host's queue/timer settings. For a worker assignment use [the compact brief](WORKER.md).
+For a bounded pass or an unattended queue session, also read
+[coordination](COORDINATION.md) and the host's queue/timer settings. For a worker
+assignment use [the compact brief](WORKER.md).

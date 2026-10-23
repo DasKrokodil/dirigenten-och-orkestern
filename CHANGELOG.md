@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Treat a request without a scope as one bounded pass: select and deliver eligible
+  issues without asking which to take, batch user-only decisions at the end and stop
+  without polling, idle watching or timers.
+
 ## 0.1.2 — 2026-10-23
 
 - Shorten and wrap README diagram labels, use SVG text for label layout, and show

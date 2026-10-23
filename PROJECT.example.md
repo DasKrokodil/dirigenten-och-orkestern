@@ -5,7 +5,8 @@ not executable code. Keep project details here, never in the shared instructions
 
 - Entry rules and relevant topic documents: <paths>.
 - User language: <language>. Explicit user scope: <argument or request>.
-- Mode: <single task or unattended queue>; reading docs never starts the queue.
+- Mode: <single task or unattended queue>; an empty scope runs one bounded pass
+  without timers, and reading docs never starts the queue.
 - Repositories and coordination issues: <owner/repo, status issue per repository>.
 - Issue workflow authority: shared ISSUE-WORKFLOW.md for GitHub; specify an adapter
   for other trackers. Local ancestor/port constraints: <policy>.

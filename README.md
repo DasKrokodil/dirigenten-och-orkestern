@@ -61,9 +61,10 @@ Follow-up fits the change: a screenshot for visual acceptance, a test result for
 behavior, or a published link and checks for documentation. The plan names the owner,
 destination and timing; issue work gets a completion comment before closure.
 
-For an explicitly requested queue session, [COORDINATION.md](COORDINATION.md) adds
-selection, ownership claims and polling around this delivery flow. Reading the package
-does not start a queue session. [WORKER.md](WORKER.md) supplies the assignment brief;
+A request without a scope runs one bounded pass: [COORDINATION.md](COORDINATION.md)
+selects and delivers eligible issues without asking which to take, then stops without
+polling. An explicitly requested queue session adds polling and idle watching around
+the same selection and claims. Reading the package does not start a queue session. [WORKER.md](WORKER.md) supplies the assignment brief;
 [PROJECT.example.md](PROJECT.example.md) supplies the host policy template.
 
 The diagrams use [Mermaid](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams),
@@ -101,7 +102,8 @@ git subtree add --prefix=.orchestra/shared \
 
 Copy the project example to `.orchestra/project.md`, fill it in, then link the host's
 agent entry points to that policy and `.orchestra/shared/ORCHESTRA.md`. A slash command
-is only a thin adapter: read host policy, read core, pass user scope. Do not copy the
+is only a thin adapter: read host policy, read core, pass user scope (an empty scope
+requests a bounded pass). Do not copy the
 core into a second prompt. Keep project configuration outside `.orchestra/shared`.
 
 Record the release and resolved upstream commit in the host policy. The installed
