@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.2 — 2026-10-23
 
 - Shorten and wrap README diagram labels, use SVG text for label layout, and show
   project-defined technical procedures as hooks in every delivery phase.
@@ -11,7 +11,6 @@
   always propose relevant bug fixes, keep other upgrades optional and imports reviewed.
 - Document exact-revision comparisons, tag-only releases, mixed upgrades, deduplication
   and offline fallback without installing background automation.
-
 - Define task-specific follow-up with an owner, evidence format, destination and
   timing; include visual, behavioral, documentation and deployment examples.
 - Require issue completion evidence before closure and keep unavailable required
