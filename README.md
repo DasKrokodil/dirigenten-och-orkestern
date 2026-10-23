@@ -58,7 +58,7 @@ have workers.
 
 ```sh
 git subtree add --prefix=.orchestra/shared \
-  https://github.com/solwation/dirigenten-och-orkestern.git v0.2.2 --squash
+  https://github.com/solwation/dirigenten-och-orkestern.git v0.2.3 --squash
 cp .orchestra/shared/PROJECT.example.md .orchestra/project.md
 ```
 
