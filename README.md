@@ -127,6 +127,9 @@ required by the workflow. The consuming application needs no runtime dependency.
 
 ## Maintainer checks
 
+Agents maintaining this repository start with [AI.md](AI.md), its own host policy
+for the orchestra, Issueflow labels and delivery to `main`.
+
 Review diff, relative links and contradictions with the host policy. Exercise install
 and update in a disposable Git repository when changing distribution instructions.
 Walk through a small fix, an independent helper, a failed check, a claim race and an
