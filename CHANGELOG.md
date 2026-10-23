@@ -10,6 +10,8 @@
   edits or state-changing git commands in another agent's or the integration checkout,
   separate ports, temporary/evidence/build paths, concurrency-safe shared resources,
   and worktree removal only after integration or preservation.
+- Offer a one-line prompt in the README quick start that lets the agent install the
+  orchestra by following INSTALL.md.
 
 ## 0.2.2 — 2026-10-23
 

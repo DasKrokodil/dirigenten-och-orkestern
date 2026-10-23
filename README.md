@@ -48,6 +48,14 @@ have workers.
 
 ## Get started in two minutes
 
+**Easiest:** ask your agent to do it.
+
+> Install the orchestra in this repository by following
+> https://github.com/solwation/dirigenten-och-orkestern/blob/main/INSTALL.md
+> and fill in the project policy from what you know about this repository.
+
+**Or by hand:**
+
 ```sh
 git subtree add --prefix=.orchestra/shared \
   https://github.com/solwation/dirigenten-och-orkestern.git v0.2.2 --squash
