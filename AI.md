@@ -20,7 +20,11 @@ controls once rather than pretending they were used.
 
 Each maintainer request starts a single scoped task. A request without a scope starts
 one bounded pass over this repository's open issues under
-[COORDINATION.md](COORDINATION.md#run-a-bounded-pass); do not ask which issue to take.
+[COORDINATION.md](COORDINATION.md#run-a-bounded-pass). The pass is unattended: ask
+nothing in the chat. Post a question only the maintainer can answer as a comment on
+the affected issue with options and a recommendation, add the `user question` label
+and continue with other work; skip such issues until answered, and whoever resumes
+one removes the label.
 Queue polling and idle watching are disabled unless explicitly requested. For an
 authorized queue session, also read COORDINATION.md and establish its scope and timer
 settings.
@@ -98,7 +102,9 @@ the actual blocker.
 
 For documentation changes, check the diff, relative links and consistency with the
 shared rules. Exercise distribution changes in a disposable repository as required
-by the README. Do not create a release or move tags unless requested.
+by the README. Create a release when an issue's acceptance requires one or when
+requested, choosing patch/minor under the README's rules; a major release needs an
+answered issue question. Never move or delete existing tags.
 
 Verify that the delivered commit is on remote `main`. Report the outcome, GitHub
 links, revision, checks and any unmet acceptance accurately.

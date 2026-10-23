@@ -22,7 +22,9 @@ not executable code. Keep project details here, never in the shared instructions
   the core resource policy; document limits rather than assuming inherited effort is
   economical. No provider-specific identifier is required by the shared core.
 - Poll interval, idle watch, heartbeat and stale-work limits: <durations or disabled>.
-- Questions/blocked work: <channel and label lifecycle>.
+- Questions/blocked work: <channel and label lifecycle, e.g. an issue comment with
+  options and a recommendation plus a `user question` label>; unattended passes never ask
+  in the chat. Release authorization in a pass: <when acceptance requires it/never>.
 - Intake hooks: <local procedure and triggers, or none>; credentials never go here.
 - Workspace, server and browser setup: <relevant local docs>.
 - Required tests, release checks and evidence-before-close: <rules>.

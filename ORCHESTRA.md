@@ -8,8 +8,8 @@ shared method; repository names, issue systems, permissions, release rules and t
 belong in the host policy. User instructions and platform restrictions take precedence.
 Reading or maintaining these files does not start an unattended queue session.
 A request without a scope, such as a bare `/orkester`, asks the conductor to choose
-the work: run one [bounded pass](COORDINATION.md#run-a-bounded-pass) without asking
-the user which issue to take.
+the work: run one unattended [bounded pass](COORDINATION.md#run-a-bounded-pass) that
+asks no chat questions and posts user-only questions on the affected issue.
 
 ## Check the installed workflow
 

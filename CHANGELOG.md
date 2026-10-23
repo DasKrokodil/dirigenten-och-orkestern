@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 — 2026-10-23
+
+- Make a bounded pass unattended: never ask in the chat; post user-only questions on
+  the affected issue with options, a recommendation and the `user question` label,
+  skip it until answered and continue with other work. Hosts state whether a pass
+  may release. The label's general rule is proposed for Issueflow in
+  solwation/github-dashboard#285.
+
 ## 0.2.0 — 2026-10-23
 
 - Treat a request without a scope as one bounded pass: select and deliver eligible
