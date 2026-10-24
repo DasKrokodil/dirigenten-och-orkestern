@@ -179,8 +179,10 @@ meaningful failure; do not build a framework or test that merely repeats the cod
 Diagnose failed scoped checks, fix failures caused by this change, and rerun affected
 checks before delivery. Track proven unrelated baseline defects separately; they do
 not waive required acceptance. A component render is not evidence for the whole application. Do not claim native
-hardware performance from emulation. User acceptance and hard contracts cannot be
-waived to save time; report unavailable evidence and keep unmet acceptance open.
+hardware performance from emulation. Hard contracts and explicit user acceptance gates
+cannot be waived to save time. Evidence that only a physical device or the user's own
+experience can supply is not a closing gate by default; see
+[best-guess closure](#close-after-a-best-guess-fix).
 
 Bind results to the revision, relevant inputs, environment and quality mode. Reuse
 valid evidence after unrelated rebases; rerun only checks affected by changed code,
@@ -231,10 +233,24 @@ private data. If attachments cannot be posted, provide an accessible artifact li
 report the limitation; never claim an upload that did not happen.
 
 Perform required post-publication checks before declaring their acceptance complete.
-If required evidence or user validation is unavailable, keep the relevant acceptance
-open and name the next action and owner. Only schedule later monitoring when authorized;
-follow-up does not itself enable unattended polling. Reuse the existing result note
-and evidence rather than adding a separate reporting phase.
+If other required evidence is unavailable, keep the relevant acceptance open and name
+the next action and owner. Only schedule later monitoring when authorized; follow-up
+does not itself enable unattended polling. Reuse the existing result note and evidence
+rather than adding a separate reporting phase.
+
+### Close after a best-guess fix
+
+Work as autonomously as the host's permissions allow. When the only missing evidence is
+a physical device, a specific user's hardware or the user's own experience (a crash on
+their phone, touch behavior on one device, "does it feel right now"), do not park the
+issue waiting for it. Diagnose with the available reports and tools, make the best
+supported fix, verify what can be verified (emulation, measurement, tests), and close
+the issue. The completion comment states plainly what was verified, what could not be
+and why, so the user can report again or reopen if the problem persists; never present
+untested behavior as tested. A device test is not a user-only question: do not post one
+through the question channel. Keep an issue open only when the host policy or the issue
+itself explicitly makes that device or user acceptance a closing gate, or when no
+plausible fix exists yet; then record the diagnosis, next action and owner.
 
 ## Keep progress observable
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Close device-dependent issues after a best-guess fix by default: when only a physical
+  device or the user's own experience could verify the result, diagnose, fix, verify
+  what is possible and close with an honest note of what remained untested; the user
+  reports again if it persists. Device tests are no longer user-only questions. Hosts or
+  issues can still make device acceptance an explicit closing gate (#17).
+
 ## 0.2.3 — 2026-10-23
 
 - Rewrite README as a short, concrete introduction with benefits, one diagram, a
