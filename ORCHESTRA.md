@@ -1,7 +1,9 @@
 # Dirigenten och orkestern
 
 A model-independent workflow for delivering scoped, verified changes with a conductor
-and optional workers. Read the host project's policy first.
+and optional workers. *Dirigenten* (the conductor) is the agent thread the user talks
+to, which spawns, briefs, monitors, integrates and reviews; *orkestern* (the orchestra)
+is the workers it directs. Read the host project's policy first.
 For GitHub issue work, also load the authoritative [Issueflow workflow](ISSUE-WORKFLOW.md)
 before creating issues or changing labels/state. This file defines the
 shared method; repository names, issue systems, permissions, release rules and timers

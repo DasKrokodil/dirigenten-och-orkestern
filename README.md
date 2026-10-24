@@ -41,6 +41,11 @@ flowchart TD
     review --> result["Verified delivery<br/>Results and evidence"]
 ```
 
+The name says who does what. **Dirigenten** (the conductor) is the agent thread you
+talk to: it spawns the worker agents, briefs them, monitors their progress, integrates
+and reviews. **Orkestern** (the orchestra) is those workers and helpers, each playing
+its own part in its own checkout.
+
 The **conductor** owns the whole delivery: it reads your project policy and the
 shared workflow, chooses the smallest useful team, integrates and reviews. Where
 delegation isn't available it plays the roles in sequence instead of pretending to

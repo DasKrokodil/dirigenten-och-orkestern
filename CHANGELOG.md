@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Explain the name in README and ORCHESTRA.md: *dirigenten* is the conductor thread
+  that spawns, briefs, monitors, integrates and reviews; *orkestern* is its workers (#18).
+
 ## 0.3.0 — 2026-10-24
 
 - Close device-dependent issues after a best-guess fix by default: when only a physical
