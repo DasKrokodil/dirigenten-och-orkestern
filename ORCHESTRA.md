@@ -154,6 +154,10 @@ Agents running at the same time share one filesystem, so isolate them:
   state-changing git commands (checkout, switch, stash, reset, clean, rebase, commit)
   in a checkout you do not own; the integration checkout belongs to the integration
   owner. Reading another checkout is fine.
+- Worktrees of one repository share its stash, refs and object store. Do not use
+  `git stash` while other agents work in sibling worktrees: one agent's `stash pop`
+  can restore another's change. Park work in a commit on your own branch or a
+  separate worktree instead, and keep branch/tag names unique per worker.
 - Give each checkout its own ports, server configuration, temporary/evidence
   directories and build output. Share a cache, database or device only when it is
   safe for concurrent use or taken in turns.

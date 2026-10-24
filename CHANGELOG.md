@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Rewrite the README around the concept: you talk to the conductor (*dirigenten*),
+  which runs the orchestra (*orkestern*) of workers; add a before/after table, a
+  who-plays-what diagram, a run walkthrough and a project icon (`docs/icon.svg`) (#19).
+- Warn that worktrees share one stash: concurrent agents must not use `git stash`,
+  after two workers' `stash pop` swapped each other's changes in a Lunden session.
+
 ## 0.3.1 — 2026-10-24
 
 - Explain the name in README and ORCHESTRA.md: *dirigenten* is the conductor thread
