@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.3.0 — 2026-10-24
 
 - Close device-dependent issues after a best-guess fix by default: when only a physical
   device or the user's own experience could verify the result, diagnose, fix, verify
