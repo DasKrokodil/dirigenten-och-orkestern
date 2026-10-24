@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.3.2 — 2026-10-24
 
 - Rewrite the README around the concept: you talk to the conductor (*dirigenten*),
   which runs the orchestra (*orkestern*) of workers; add a before/after table, a
