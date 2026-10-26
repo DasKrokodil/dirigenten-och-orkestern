@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.4.0 — 2026-10-26
 
 - Dispatch before intake: intake hooks run while workers are busy and never delay
   startable work; they still run before a drain, review or idle decision (#20).
