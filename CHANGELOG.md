@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Anchor the idle-watch deadline to this session: the latest issue it resolved, or its
+  first idle entry. Resolutions by earlier or other sessions no longer make a fresh
+  session stop at once after a quiet period (#21).
+
 ## 0.4.0 — 2026-10-26
 
 - Dispatch before intake: intake hooks run while workers are busy and never delay
