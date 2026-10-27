@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.4.1 — 2026-10-27
 
 - Anchor the idle-watch deadline to this session: the latest issue it resolved, or its
   first idle entry. Resolutions by earlier or other sessions no longer make a fresh
