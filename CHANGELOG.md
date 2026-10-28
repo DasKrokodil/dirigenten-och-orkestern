@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Define the session ID: `[<project>-]<host>-<model>-<YYYYMMDD>[<suffix>]`, so ownership
+  labels such as `orkester: booster-olw-win10-opus-5.5-20261028` show which machine and
+  model hold an issue. Includes how to read host and model, shortening to GitHub's
+  50-character label limit, model changes and workers on other models; existing labels
+  stay valid (#23).
+
 ## 0.4.1 — 2026-10-27
 
 - Anchor the idle-watch deadline to this session: the latest issue it resolved, or its
