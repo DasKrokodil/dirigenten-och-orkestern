@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.5.0 — 2026-10-28
 
 - Define the session ID: `[<project>-]<host>-<model>-<YYYYMMDD>[<suffix>]`, so ownership
   labels such as `orkester: booster-olw-win10-opus-5.5-20261028` show which machine and
