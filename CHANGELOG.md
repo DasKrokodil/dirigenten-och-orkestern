@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0 — 2026-10-28
+
+- Resume unfinished work first: at conductor startup/resume of any run, look for
+  uncommitted changes, unpushed commits, leftover worktrees/branches and stale claims,
+  resume what is not yet on main and discard what another orchestra or session already
+  delivered there, then continue with the next issue. Discard only on proof; never
+  touch work a visibly active agent owns (#24).
+
 ## 0.5.0 — 2026-10-28
 
 - Define the session ID: `[<project>-]<host>-<model>-<YYYYMMDD>[<suffix>]`, so ownership

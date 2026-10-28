@@ -8,9 +8,11 @@ No scheduler, service or network integration is installed by these instructions.
 ## Run a bounded pass
 
 A request without a scope authorizes one bounded pass over the host's configured
-queue. Select, claim and deliver eligible issues under the rules below without asking
-the user to choose; work within capacity until no eligible work remains, run the
-[session review](#review-the-session), then perform a final complete fetch and stop.
+queue. First [resume unfinished local work](ORCHESTRA.md#resume-unfinished-work-first),
+discarding what already reached main. Then select, claim and deliver eligible issues
+under the rules below without asking the user to choose; work within capacity until
+no eligible work remains, run the [session review](#review-the-session), then perform
+a final complete fetch and stop.
 A pass enables no polling, idle watch or timer and leaves no claims or active labels behind; those need an explicit queue session.
 
 A pass is unattended: never ask the user in the chat, at the start, during or at the
@@ -121,6 +123,8 @@ unused, blockers, latest results and UTC time.
 Retain per-repository last successful fetch, last complete successful fetch, last
 attempt/outcome, the session's last resolution and idle deadline. Failure must not overwrite success
 timestamps. Resume the same ID, comments, worktrees and commits after interruption.
+A new session first [resumes or discards](ORCHESTRA.md#resume-unfinished-work-first)
+leftover local work, then dispatches.
 
 Do not seize a visibly active issue. Follow host expiry/takeover rules, announce a
 handover in the shared tracker and preserve the previous work. Missing heartbeat is
